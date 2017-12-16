@@ -5,7 +5,6 @@ import time
 HOST = ''
 PORT = 8080
 
-
 def create_sock():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -32,7 +31,6 @@ def main_loop():
         while True:
             try:
                 data = "not data"
-                import ipdb; ipdb.set_trace() ### XXX BREAKPOINT
                 data = conn.recv(1024)
                 print "cli say:", data
             except Exception as ex:
