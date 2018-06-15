@@ -5,6 +5,7 @@ HOST = 'localhost'    # The remote host
 PORT = 8080              # The same port as used by the server
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#s.bind((HOST, 9090))
 s.connect((HOST, PORT))
 
 while True:
