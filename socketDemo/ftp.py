@@ -1,23 +1,3 @@
-# A simple FTP client.
-#
-# The information to write this program was gathered from RFC 959,
-# but this is not a complete implementation!  Yet it shows how a simple
-# FTP client can be built, and you are welcome to extend it to suit
-# it to your needs...
-#
-# How it works (assuming you've read the RFC):
-#
-# User commands are passed uninterpreted to the server.  However, the
-# user never needs to send a PORT command.  Rather, the client opens a
-# port right away and sends the appropriate PORT command to the server.
-# When a response code 150 is received, this port is used to receive
-# the data (which is written to stdout in this version), and when the
-# data is exhausted, a new port is opened and a corresponding PORT
-# command sent.  In order to avoid errors when reusing ports quickly
-# (and because there is no s.getsockname() method in Python yet) we
-# cycle through a number of ports in the 50000 range.
-
-
 import sys, posix, string
 from socket import *
 
