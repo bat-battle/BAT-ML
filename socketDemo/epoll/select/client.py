@@ -1,0 +1,9 @@
+#coding:utf-8
+import socket,select
+host = "localhost"
+port = 8000
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect((host,port))
+s.send("coming from select client")
+s.close()
+
